@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myBasketApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Anguler Test</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Add Angular -->
+    <script src="js\lib\angular.min.js"></script>
+    <script src="js\app.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container" ng-controller = "BasketController">
+
+        <div class="row">
+            <!-- from Vegetables.html -->
+            <ng-include src="'sections/Vegetables.html'"></ng-include>
+
+
+            <!-- main operations start -->
+
+            <div class="col-xs-6 col-sm-4">
+                <div class="middleSidebar">
+                    <div class="listitem">
+                        <ul>
+                            <li>{{currentItem.name}}</li>
+                        </ul>
+                    </div>
+                    <button type="button" ng-click = "addToBucket(currentItem, 'vegetable')" class="btn btn-success">vegetable</button>
+                    <button type="button" ng-click = "addToBucket(currentItem, 'fruit')" class="btn btn-warning">fruit</button>
+
+
+                </div>
+                <div class="fruitDetail">
+
+                    <div class="labelList">
+                        <label>Allow Delete</label>
+                        <select class="selectpicker">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+                    </div>
+
+                    <div class="labelList">
+                        <label>Item Color</label>
+                        <select id="fruit_color" class="selectpicker">
+              <option value="#337ab7">Blue</option>
+              <option value="#f00">Red</option>
+              <option>Green</option>
+            </select>
+                    </div>
+                    <div class="labelList">
+                        <span class="undo">UNDO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add the extra clearfix for only the required viewport -->
+            <div class="clearfix visible-xs"></div>
+
+            <!-- main operations end -->
+
+            <!-- from fruits.html -->
+            <ng-include src="'sections/fruits.html'"></ng-include>
+
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap-select.min.js"></script>
+
+</body>
+
+</html>

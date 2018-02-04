@@ -1,0 +1,30 @@
+<div class="col-xs-6 col-sm-4">
+  <div class="sidebar2">
+   <h4>Fruits</h4>
+
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Filter">
+      </div>
+
+
+    <div class="row">
+    <div class="col-md-6">Order By</div>
+    <div class="col-md-6"><span><strong>SIZE</strong></span> | <span><strong>NAME</strong></span></div>
+    </div>
+
+    <div class="listitem">
+       <ul  class="list_container">
+         <li ng-repeat = "item in basketItems" ng-show = "item.attr1 === 'fruit' && item.attr2 !== 'removed'">
+           <span class="left_short">
+             <a href="#" class="arrowUP">
+               <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+             </a>
+             <a href="#" class="arrowDown"> <span class="glyphicon glyphicon-play" aria-hidden="true"></span> </a>
+           </span>
+           <a href="#">{{item.name}}</a><a class="remove" href="#" title="Remove"><i class="glyphicon glyphicon-remove" ng-click="removeFromBucket(item)"></i></a></li>
+
+
+       </ul>
+    </div>
+
+  </div></div>
