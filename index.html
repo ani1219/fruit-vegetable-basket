@@ -12,8 +12,21 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- Add Angular -->
-    <script src="js\lib\angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+
+    </script>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!-- <script src="js\lib\angular.min.js"></script> -->
     <script src="js\app.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -41,8 +54,10 @@
                             <li>{{currentItem.name}}</li>
                         </ul>
                     </div>
-                    <button type="button" ng-click = "addToBucket(currentItem, 'vegetable')" class="btn btn-success">vegetable</button>
-                    <button type="button" ng-click = "addToBucket(currentItem, 'fruit')" class="btn btn-warning">fruit</button>
+                    <!-- <button type="button" ng-click = "addToBucket(currentItem, 'vegetable')" class="btn btn-success">vegetable</button>
+                    <button type="button" ng-click = "addToBucket(currentItem, 'fruit')" class="btn btn-warning">fruit</button> -->
+                    <button type="button" ng-click = "manageBuckets(currentItem, 'vegetable', 1)" class="btn btn-success">vegetable</button>
+                    <button type="button" ng-click = "manageBuckets(currentItem, 'fruit', 1)" class="btn btn-warning">fruit</button>
 
 
                 </div>
@@ -50,7 +65,7 @@
 
                     <div class="labelList">
                         <label>Allow Delete</label>
-                        <select class="selectpicker">
+                        <select class="selectpicker"  ng-change="toggleCanDelete()" ng-model="selectedVal" ng-init="selectedVal='Yes'">
               <option>Yes</option>
               <option>No</option>
             </select>
